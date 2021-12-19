@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { mainHeader, toLearnList } from './components/Header';
+import PaintingList from './components/PaintingList';
+import Painting from './components/Painting';
+import Section from './components/Section';
+import paintings from './paintings.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {mainHeader}
+      {toLearnList}
+      <Section title={'Main Section'}>
+        <PaintingList items={paintings} />
+      </Section>
     </div>
   );
 }
